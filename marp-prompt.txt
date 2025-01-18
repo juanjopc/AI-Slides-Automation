@@ -1,7 +1,6 @@
 You are tasked with creating and editing a single file, marp.md, which integrates content, structure, and styling for Marp slides (using VS Code Marp extension). Marp combines Markdown for organizing slide content (text, images, bullets, or lists), HTML for layout elements (titles, headers, footers, sections, etc.), and CSS for styling (font, color, background, size, dimensions). Use the following details to complete the task:
 
 File and Folder Structure:
-
 project/
 │
 ├── marp.md (Single file containing content, structure, and styling)
@@ -9,7 +8,6 @@ project/
 └── assets/ (Folder containing external resources such as fonts, images, and other files)
 
 Example of the file tree:
-
 project/
 │
 ├── marp.md
@@ -21,34 +19,36 @@ project/
     └── image2.png
 
 Documentation:
-
 All necessary documentation is consolidated in marp_documentation.txt, which contains comprehensive guidelines for:
 
-    Controlling Slide Deck Layout and Theme (HTML and CSS):
+Controlling Slide Deck Layout and Theme (HTML and CSS):
 Uses directives to set global and per-slide attributes, configure pagination, and customize headers, footers, and styles.
 
-    Adding Images:
-    Instructions for embedding and styling images within marp.md.
+Adding Images:
+Instructions for embedding and styling images within marp.md.
 
-    Creating Bullets or Lists:
-    Documentation for structuring content using lists in Markdown.
+Creating Bullets or Lists:
+Documentation for structuring content using lists in Markdown.
 
-    Styling with CSS:
-    Defining slide sizes, pagination, headers, and footers, setting colors and backgrounds, and applying styles globally, to specific sections, or individual slides.
+Styling with CSS:
+Defining slide sizes, pagination, headers, and footers, setting colors and backgrounds, and applying styles globally, to specific sections, or individual slides.
 
 Key Requirements:
-
-    Markdown Structure: Use --- to separate slides, adhering to Marp standards.
-    HTML Elements: Include HTML blocks for sections like footers and headers where necessary.
-    Inline CSS: Embed CSS within <style> tags to manage styling without external files.
-
-Important Note:
-
-At every step, consult marp_documentation.txt to ensure all elements are implemented correctly and with the best practices.
+Markdown Structure:
+Always begin the file with the following Marp directives to enable Marp functionality in VS Code:
+---
+marp: true
+theme: default
+---
+Use --- to separate slides, adhering to Marp standards.
+HTML Elements: Include HTML blocks for sections like footers and headers where necessary.
+Inline CSS: Embed CSS within <style> or <style scoped> tags to manage styling without external files.
 
 Goal:
-
-Create a well-structured marp.md file that effectively combines content, layout, and styling. Use the documentation provided below (after this prompt) for precise implementation.
+Create a well-structured marp.md file using the VS Code Marp extension, combining content, layout, and styling.
+Content per slide must be clear, focused, and brief, prioritizing easy comprehension.
+Do not add any formatting unless the user explicitly specifies it.
+If the user does not provide specific formatting instructions, create slides in plain Markdown without using HTML or CSS.
 
 Marp_documentation.txt content:
 
@@ -957,3 +957,197 @@ h1 {
 ```
 
 It is useful when you want to fine-tune styles per slide page.
+
+Below is an example of a marp.md file that demonstrates how to structure slides, add text and images, create tables, adjust styles, include pagination, and more. Take it as a reference only.
+
+Example of a marp.md file:
+
+---
+marp: true
+theme: default
+---
+
+<style>
+/* Define fonts */
+@font-face {
+  font-family: 'EagleHorizonP';
+  src: url('assets/EagleHorizonP.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'RusticRoadway';
+  src: url('assets/RusticRoadway.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'ChristmasTwinkle';
+  src: url('assets/ChristmasTwinklePersonaluse-Regular.ttf') format('truetype');
+}
+
+/* Heading fonts */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'EagleHorizonP', sans-serif;
+}
+
+/* General text */
+body, p, li, blockquote, code, pre, span, a, strong, em {
+  font-family: 'RusticRoadway', sans-serif;
+}
+
+/* Subtext styling */
+table, .subtexto {
+  font-family: 'ChristmasTwinkle', sans-serif;
+  font-size: 0.5em; /* Adjust this value for smaller subtext */
+}
+
+/* Header styling */
+header {
+  left: auto;
+  right: 30px;
+}
+
+header .logo {
+  height: 50px;
+}
+
+/* Footer styling */
+footer {
+  font-family: 'RusticRoadway', sans-serif;
+  left: auto;
+  right: 30px;
+}
+</style>
+
+<!-- backgroundImage: "url('assets/background_1.jpg')" -->
+# Why You Should Automate Your Slides with Marp in VS Code
+
+---
+
+<!-- header: '<img src="assets/logo.png" class="logo">' -->
+<!-- paginate: true -->
+<!-- backgroundImage: "url('assets/background.jpg')" -->
+<!-- footer: 'Marp for VS Code' -->
+
+## Introduction
+
+Creating presentations can be a time-consuming and frustrating process. Traditional presentation software often involves tedious manual formatting, limited version control, and difficulties in handling code snippets. But what if there was a tool that could free you from these constraints and streamline your workflow? Enter Marp. This article explores the benefits of automating your slides with Marp in VS Code, delving into its features, advantages, and how it compares to other tools.
+
+---
+
+## A Better Way with Marp
+
+This is a paragraph using `RusticRoadway`.
+
+- Marp leverages the straightforward Markdown format, making it easy to create and edit slides.
+- <span class="subtexto">With Marp, you can focus on your content without worrying about complex formatting.</span>
+
+> Marp allows seamless transitions between coding and slide creation.
+> <span class="subtexto">This ensures developers can work efficiently within a familiar environment.</span>
+
+
+---
+
+## What is Marp?
+
+<style scoped>
+/* Center the table */
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+
+Marp, which stands for Markdown Presentation Ecosystem, is an open-source tool that allows you to create presentations using Markdown. It offers a simple yet powerful solution for creating interactive and visually appealing presentations. Marp works seamlessly with VS Code, providing a live preview mode that lets you see your changes in real-time. This integration enhances VS Code's Markdown preview feature, allowing you to efficiently craft your presentations.
+
+---
+
+<!-- header: '' -->
+<!-- footer: '' -->
+<!-- paginate: false -->
+<!-- backgroundImage: false -->
+
+## Marp and VS Code Integration
+
+<style scoped>
+/* Image container for centered image */
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Full slide height */
+}
+
+.image-container img {
+  width: 50%; /* Display at 2x original size */
+  height: auto;
+}
+</style>
+
+<div class="image-container">
+  <img src="assets/marp.png" alt="Marp and VS Code Integration">
+</div>
+
+---
+
+## Marp CLI
+
+<style scoped>
+/* Table styling */
+table {
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+</style>
+
+In addition to the VS Code extension, Marp also offers a command-line interface (CLI). The Marp CLI provides a way to convert Markdown to presentations outside of VS Code. This offers flexibility for users who prefer a command-line interface or need to integrate Marp into their existing workflows.
+
+<!-- Add a table -->
+| Feature         | Description                                 |
+|-----------------|---------------------------------------------|
+| Markdown to PDF | Convert Markdown files directly to PDFs.    |
+| Custom Themes   | Use CSS to create custom themes for slides. |
+| CLI Flexibility | Automate slide generation with CLI options. |
+
+---
+
+## Conclusion
+
+<style scoped>
+/* Flex container for the conclusion */
+.flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Image styling for conclusion */
+.flex-container img {
+  max-width: 30%; /* Adjusted size for the conclusion */
+  height: auto;
+}
+
+/* Text container for conclusion */
+.text-container {
+  max-width: 65%;
+  font-family: 'RusticRoadway', sans-serif; /* Explicitly apply the RusticRoadway font */
+}
+</style>
+
+<div class="flex-container">
+  <div class="text-container">
+    Marp offers a compelling solution for automating your slides in VS Code. Its simplicity, efficiency, and flexibility make it an attractive alternative to traditional presentation software. By leveraging Marp's features, you can streamline your workflow, focus on your content, and create engaging presentations with ease.
+  </div>
+  <img src="assets/graph.png" alt="Graph Image">
+</div>
