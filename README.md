@@ -1,3 +1,5 @@
+[![Tutorial & Demo](https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fyoutu.be%2FUzOBoaEY5vs)](https://youtu.be/UzOBoaEY5vs)
+
 # AI-Slides-Automation
 
 # Design and Automate Your Presentations Effortlessly Using AI, Marp, and Mermaid.js  
